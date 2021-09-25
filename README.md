@@ -50,6 +50,28 @@ php artisan migrate --seed
 php artisan key:generate
 ````
 
+开启api缓存--提供访问速度
+````
+php artisan api:cache
+````
+
+开启配置文件缓存
+
+····
+php artisan config:cache
+····
+
+删除所有表并重新运行所有迁移
+
+····
+php artisan migrate:fresh --seed
+····
+
+随机生成商品测试数据  --可选执行
+····
+php artisan db:seed --class=GoodsSeeder
+····
+
 **使用的是mysql8.0**
 如果执行迁移发送错误，请在**app\Providers\AppServiceProvider.php**的boot里面加上 Schema::defaultStringLength(191);
 还有取消2021_09_09_081825_create_goods_table.php迁移文件里面的四个索引
