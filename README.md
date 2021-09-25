@@ -45,6 +45,11 @@ php artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvid
 php artisan migrate --seed
 ````
 
+如果报key错误，请执行重新生成key命令
+````
+php artisan key:generate
+````
+
 **使用的是mysql8.0**
 如果执行迁移发送错误，请在**app\Providers\AppServiceProvider.php**的boot里面加上 Schema::defaultStringLength(191);
 还有取消2021_09_09_081825_create_goods_table.php迁移文件里面的四个索引
